@@ -1,0 +1,11 @@
+[Service]
+User=%i
+WorkingDirectory=/home/%i/ParkAPI
+Environment=VIRTUAL_ENV="/home/%i/venv"
+Environment=PATH="$VIRTUAL_ENV/bin:$PATH"
+Environment=env=%i
+ExecStart=/home/%i/ParkAPI/venv/bin/python bin/parkapi-server
+Restart=Always
+
+[Install]
+WantedBy=multi-user.target
